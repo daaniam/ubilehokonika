@@ -1,0 +1,15 @@
+.icon__facebook24 {
+    background: url('../icons/facebook24px.png');
+    height: 24px;
+    width: 24px;
+    display: block;
+    box-shadow: 0 0 4px lightgrey;
+}
+
+.icon__instagram24 {
+    background: url('../icons/instagram24px.png');
+    height: 24px;
+    width: 24px;
+    display: block;
+    box-shadow: 0 0 4px lightgrey;
+}

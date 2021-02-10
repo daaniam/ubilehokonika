@@ -1,0 +1,56 @@
+@import 'colors.css';
+
+@font-face {
+    font-family: 'WorkSans';
+    src: local('WorkSans'),
+    url('../fonts/WorkSans-VariableFont_wght.ttf') format("truetype");
+}
+@font-face {
+    font-family: 'WorkSansItalic';
+    src: local('WorkSansItalic'),
+    url('../fonts/WorkSans-Italic-VariableFont_wght.ttf') format("truetype");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+
+    font-family: "WorkSans", serif;
+    font-weight: 100;
+    font-size: 1rem;
+    color: var(--font-primary);
+
+
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    background-color: var(--bg-primary);
+
+}
+body > .body__container {
+    max-width: 1000px;
+    margin: auto;
+    background-color: var(--surface-secondary);
+    box-shadow: 1px 1px 16px grey;
+}
+
+/*MIXIN*/
+.m-flex-row {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+}
+.m-flex-col {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+.m-shadow-8 {
+    box-shadow: 0 0 8px grey;
+}

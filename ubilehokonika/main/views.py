@@ -6,7 +6,6 @@ from django.utils.translation import gettext as _
 
 
 def home(request):
-    output = _("Hello there")
     return render(
         request=request,
         template_name='base/home.html',

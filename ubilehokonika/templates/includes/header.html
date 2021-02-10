@@ -1,0 +1,45 @@
+{% load i18n %}
+
+<header class="header__container">
+
+    {# TOP BAR #}
+    <div class="header__topbar">
+        {# FACEBOOK ICON #}
+        <div class="icon__facebook24"></div>
+
+        {# INSTAGRAM ICON #}
+        <div class="icon__instagram24"></div>
+
+        {# LANGUAGE SWITCHER #}
+        <div>
+            <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
+                <input name="next" type="hidden" value="{{ redirect_to }}">
+                <select class="header__select-field" name="language" onchange="this.form.submit()">
+                    {% get_current_language as LANGUAGE_CODE %}
+                    {% get_available_languages as LANGUAGES %}
+                    {% get_language_info_list for LANGUAGES as languages %}
+                    {% for language in languages %}
+                        <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
+                            {{ language.name_local }} ({{ language.code }})
+                        </option>
+                    {% endfor %}
+                </select>
+
+            </form>
+        </div>
+    </div>
+
+    {# MAIN IMAGE #}
+    <div>
+        <img class="header__image" src="/static/images/header.jpg" alt="Building">
+    </div>
+
+    {# MAIN MENU #}
+    <div class="header__menu">
+        <a href="{% url 'main:home' %}">{% trans 'Hlavní stránka' %}</a>
+        <a href="{% url 'main:home' %}">{% trans 'Rezervace ubytování' %}</a>
+        <a href="{% url 'main:home' %}">{% trans 'Kontakt' %}</a>
+    </div>
+
+
+</header>
