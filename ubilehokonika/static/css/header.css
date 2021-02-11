@@ -11,9 +11,14 @@
     justify-content: flex-end;
     align-items: center;
 }
-.header__topbar > div {
+.header__topbar a:first-child {
+    color: var(--surface-primary);
+    flex-grow: 1;
+}
+.header__topbar div {
     margin: 0 4px;
 }
+
 
 .header__select-field{
 	box-sizing: border-box;
@@ -33,15 +38,13 @@
 
 .header__menu {
     background-color: var(--surface-primary);
-
-
     display: flex;
     flex-flow: row;
     justify-content: flex-end;
 }
-.header__menu > a {
+.header__menu > a, span {
     padding: 4px 8px;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: normal;
     color: var(--surface-secondary)
 }

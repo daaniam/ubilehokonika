@@ -4,11 +4,15 @@
 
     {# TOP BAR #}
     <div class="header__topbar">
+
+        {# LOGO #}
+        <a href="{% url 'main:home' %}">Kostelní Bříza</a>
+
         {# FACEBOOK ICON #}
-        <div class="icon__facebook24"></div>
+        {% include 'includes/icon24_facebook_link.html' %}
 
         {# INSTAGRAM ICON #}
-        <div class="icon__instagram24"></div>
+        {% include 'includes/icon24_instagram.link.html' %}
 
         {# LANGUAGE SWITCHER #}
         <div>
@@ -37,7 +41,9 @@
     {# MAIN MENU #}
     <div class="header__menu">
         <a href="{% url 'main:home' %}">{% trans 'Hlavní stránka' %}</a>
+        <span>|</span>
         <a href="{% url 'main:home' %}">{% trans 'Rezervace ubytování' %}</a>
+         <span>|</span>
         <a href="{% url 'main:home' %}">{% trans 'Kontakt' %}</a>
     </div>
 

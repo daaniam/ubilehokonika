@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from datetime import datetime
+
 from django.utils.translation import gettext as _
 
 
@@ -9,5 +11,5 @@ def home(request):
     return render(
         request=request,
         template_name='base/home.html',
-        context=None
+        context={"current_year": datetime.now().year}
     )

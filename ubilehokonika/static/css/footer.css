@@ -1,0 +1,11 @@
+.footer__container  * {
+    color: var(--surface-secondary);
+}
+.footer__container {
+    background-color: var(--surface-primary);
+    height: 6rem;
+}
+
+.footer__social  * {
+    margin: 0 2px;
+}

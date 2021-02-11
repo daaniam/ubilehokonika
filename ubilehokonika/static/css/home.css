@@ -1,8 +1,11 @@
 .home__container {
-    padding: 2rem;
+    padding: 0 4rem;
 }
 .home__container > div {
     margin-top: 4rem;
+}
+.home__container > div:last-child {
+    margin-bottom: 4rem;
 }
 
 .home__history {
