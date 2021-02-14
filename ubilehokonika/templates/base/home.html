@@ -1,64 +1,92 @@
 {% extends 'base/base.html' %}
 {% load i18n %}
 
-
-
 {% block content %}
-    <div class="m-flex-col home__container">
+    <div class="g-flex-col home__container">
 
-        {# ANNOUNCEMENT #}
+        {# WELCOME BLOCK #}
+        <div class="home__welcome_block">
+            {# WELCOME IMAGE #}
+            <div class="g-flex-col">
+                <img src="/static/images/oldphoto01.jpg" alt="old photo" width="348" height="249"
+                     class="home__welcome_image">
+                <p>Kostelní Bříza</p>
+            </div>
 
-        {# ABOUT - HISTORY BLOCK #}
-        <div class="m-flex-row">
-            <img src="/static/images/oldphoto01.jpg" alt="old photo" width="348" height="249">
-            <p style="margin: 0 2rem">
-                Vítejte na webu penzionu U Bílého koníka <br> na Kostelní Bříze.
-            </p>
+            {# ANNOUNCEMENTS #}
+            {% if announcements %}
+                <div>
+                    <p class="home__announcement_title">{% trans 'Novinky a oznámení' %}</p>
+                    <ul class="g-list-clean home__announcements">
+                        {% for announcement in announcements %}
+                            <li class="home__announcement-box">
+                                <div class="home__announcement-date"> {{ announcement.date }}</div>
+                                <div class="home__announcement-msg">{{ announcement.msg }}</div>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
         </div>
 
-        <div >
-            <p class="home__history">
-                Na severních svazích Slavkovského lesa vystupujících od řeky Ohře se za prvními kopci schovává malá
-                půvabná
-                vesnička – Kostelní Bříza. Počátek historie této vesničky sahá hluboko do minulosti, do dob osidlování
-                pohraničních hvozdů německými osadníky a možná ještě dál. Staletí plynula a období klidná, plná tvořivé
-                práce obyvatel v těžkých podhorských podmínkách, střídala nezřídka období neklidná nebo dokonce válečná.
-                Nikdo dnes neví, zda je dílem náhody, že Kostelní Bříza nakonec přestála i poslední válečné období,
-                následné
-                vylidnění celé oblasti, dlouhá léta drancování uprostřed vojenského prostoru i „hospodaření“
-                socialistických
-                správců. Je krutou skutečností, že řada obcí v okolí takové štěstí neměla. Hodně ošumělá, poničená,
-                mnohdy
-                zatracovaná, přesto existující, přestála Kostelní Bříza až do doby, která jí přinesla naději, že se vše
-                ještě může alespoň zčásti napravit a vrátit do původního stavu. Naději, že se vesnička bude zase skvět
-                ve
-                své kráse a uchvacovat každého návštěvníka, který na své cestě zavítá na náves a obklopen pozdně
-                barokním
-                kostelem zasvěceným sv. Petru a Pavlu, barokním hrázděným stavením hospůdky a budovou školy a fary,
-                ucítí
-                zvláštní, nepopsatelné, klid vyzařující kouzlo genia loci. Stručně řečeno – Kostelní Bříza žije.
-                Vítejte.
-            </p>
-        </div>
-
-
-        {# PICTURES BLOCK #}
-        <div class="m-flex-row m-shadow-8 home__pictures">
-            {# LEFT SIDE #}
-            <div class="m-flex-col">
-                {# LEFT TOP #}
-                <img src="/static/images/room01.jpg" alt="old photo" width="480" height="360">
-                {# LEFT BOTTOM #}
-                <div class="m-flex-row">
-                    <img src="/static/images/food01.jpg" alt="old photo" width="158" height="160">
-                    <img src="/static/images/wedding01.jpg" alt="old photo" width="158" height="160">
-                    <img src="/static/images/food03.jpg" alt="old photo" width="158" height="160">
+        {# HISTORY BLOCK #}
+        <div class="home__history_block">
+            <div class="home__history_article_block">
+                <p class="home__history_article_title">{% trans 'Z historie Kostelní Břízy' %}</p>
+                {# HISTORY ARTICLE #}
+                <div class="home__history_article">
+                    <p>
+                        {% blocktrans %}
+                            Na severních svazích Slavkovského lesa vystupujících od řeky Ohře se za prvními kopci
+                            schovává malá půvabná vesnička – Kostelní Bříza.
+                        {% endblocktrans %}
+                    </p>
+                    <p>
+                        {% blocktrans %}
+                            Počátek historie této vesničky sahá hluboko do minulosti, do dob osidlování
+                            pohraničních hvozdů německými osadníky a možná ještě dál. Staletí plynula a období klidná,
+                            plná
+                            tvořivé práce obyvatel v těžkých podhorských podmínkách, střídala nezřídka období neklidná
+                            nebo
+                            dokonce válečná. Nikdo dnes neví, zda je dílem náhody, že Kostelní Bříza nakonec přestála i
+                            poslední válečné období, následné vylidnění celé oblasti, dlouhá léta drancování uprostřed
+                            vojenského prostoru i „hospodaření“ socialistických správců.
+                        {% endblocktrans %}
+                    </p>
+                    <p>
+                        {% blocktrans %}
+                            Je krutou skutečností, že řada obcí v okolí takové štěstí neměla. Hodně ošumělá, poničená,
+                            mnohdy zatracovaná, přesto existující, přestála Kostelní Bříza až do doby, která jí přinesla
+                            naději, že se vše ještě může alespoň zčásti napravit a vrátit do původního stavu. Naději, že
+                            se vesnička bude zase skvět ve své kráse a uchvacovat každého návštěvníka, který na své
+                            cestě zavítá na náves a obklopen pozdně barokním kostelem zasvěceným sv. Petru a Pavlu,
+                            barokním hrázděným stavením hospůdky a budovou školy a fary, ucítí zvláštní, nepopsatelné,
+                            klid vyzařující kouzlo genia loci. Stručně řečeno – Kostelní Bříza žije. Vítejte.
+                        {% endblocktrans %}
+                    </p>
+                </div>
+                {# HISTORY SOURCE #}
+                <div class="home__history_article_source">
+                    {% trans 'Zdroj:' %}
+                    <a href="http://www.kirchenbirk.cz/" target="_blank">kirchenbirk.cz</a>
                 </div>
             </div>
-            {# RIGHT SIDE #}
-            <img src="/static/images/outside01.jpg" alt="old photo" width="292" height="520">
+            {# HISTORY BLOCK IMAGE #}
+            <img class="home__history_img" src="/static/images/outside02.jpg" alt="church" width="292" height="520">
         </div>
 
+        {# PICTURES BLOCK #}
+        <div class="home__pictures_flex">
+            <img src="/static/images/room01.jpg" alt="room">
+            <img src="/static/images/food01.jpg" alt="food">
+            <img src="/static/images/wedding01.jpg" alt="wedding">
+            <img src="/static/images/food02.jpg" alt="food">
+            <img src="/static/images/wedding02.jpg" alt="food">
+            <img src="/static/images/food03.jpg" alt="food">
+            <img src="/static/images/outside01.jpg" alt="food">
+            <img src="/static/images/wedding03.jpg" alt="food">
+            <img src="/static/images/food04.jpg" alt="food">
+        </div>
     </div>
 
 {% endblock %}

@@ -4,6 +4,8 @@
 .footer__container {
     background-color: var(--surface-primary);
     height: 6rem;
+    border-top: 1px solid var(--surface-secondary);
+    box-shadow: 0 -2px 4px grey;
 }
 
 .footer__social  * {

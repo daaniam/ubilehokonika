@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-08 21:51-0800\n"
+"POT-Creation-Date: 2021-02-10 18:19-0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,10 +19,24 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n "
 "<= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
 
-#: .\templates\base\home.html:6
-msgid "This is our homepage"
-msgstr "Toto je naše webová stránka"
+#: .\templates\base\home.html:18
+msgid "Vítejte na webu penzionu U Bílého koníka <br> na Kostelní Bříze."
+msgstr ""
 
-#: .\templates\base\home.html:7
-msgid "It contains info about our pension"
-msgstr "Obsahuje informace o nasem penzionu"
+#: .\templates\includes\header.html:43
+msgid "Hlavní stránka"
+msgstr ""
+
+#: .\templates\includes\header.html:45
+msgid "Rezervace ubytování"
+msgstr ""
+
+#: .\templates\includes\header.html:47
+msgid "Kontakt"
+msgstr ""
+
+#~ msgid "This is our homepage"
+#~ msgstr "Toto je naše webová stránka"
+
+#~ msgid "It contains info about our pension"
+#~ msgstr "Obsahuje informace o nasem penzionu"

@@ -1,0 +1,97 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-02-13 22:02-0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\templates\base\home.html:19
+msgid "Novinky a oznámení"
+msgstr "News and announcements"
+
+#: .\templates\base\home.html:35
+msgid "Z historie Kostelní Břízy"
+msgstr "From the history of Kostelní Bříza"
+
+#: .\templates\base\home.html:39
+msgid ""
+"\n"
+"                            Na severních svazích Slavkovského lesa "
+"vystupujících od řeky Ohře se za prvními kopci\n"
+"                            schovává malá půvabná vesnička – Kostelní "
+"Bříza.\n"
+"                        "
+msgstr ""
+
+#: .\templates\base\home.html:45
+msgid ""
+"\n"
+"                            Počátek historie této vesničky sahá hluboko do "
+"minulosti, do dob osidlování\n"
+"                            pohraničních hvozdů německými osadníky a možná "
+"ještě dál. Staletí plynula a období klidná,\n"
+"                            plná\n"
+"                            tvořivé práce obyvatel v těžkých podhorských "
+"podmínkách, střídala nezřídka období neklidná\n"
+"                            nebo\n"
+"                            dokonce válečná. Nikdo dnes neví, zda je dílem "
+"náhody, že Kostelní Bříza nakonec přestála i\n"
+"                            poslední válečné období, následné vylidnění celé "
+"oblasti, dlouhá léta drancování uprostřed\n"
+"                            vojenského prostoru i „hospodaření“ "
+"socialistických správců.\n"
+"                        "
+msgstr ""
+
+#: .\templates\base\home.html:57
+msgid ""
+"\n"
+"                            Je krutou skutečností, že řada obcí v okolí "
+"takové štěstí neměla. Hodně ošumělá, poničená,\n"
+"                            mnohdy zatracovaná, přesto existující, přestála "
+"Kostelní Bříza až do doby, která jí přinesla\n"
+"                            naději, že se vše ještě může alespoň zčásti "
+"napravit a vrátit do původního stavu. Naději, že\n"
+"                            se vesnička bude zase skvět ve své kráse a "
+"uchvacovat každého návštěvníka, který na své\n"
+"                            cestě zavítá na náves a obklopen pozdně barokním "
+"kostelem zasvěceným sv. Petru a Pavlu,\n"
+"                            barokním hrázděným stavením hospůdky a budovou "
+"školy a fary, ucítí zvláštní, nepopsatelné,\n"
+"                            klid vyzařující kouzlo genia loci. Stručně "
+"řečeno – Kostelní Bříza žije. Vítejte.\n"
+"                        "
+msgstr ""
+
+#: .\templates\base\home.html:70
+msgid "Zdroj:"
+msgstr "Source:"
+
+#: .\templates\includes\header.html:9
+msgid "Vítejte na stránkách penzionu U Bílého koníka"
+msgstr "Welcome at pension U Bílého koníka homepage"
+
+#: .\templates\includes\header.html:43
+msgid "Hlavní stránka"
+msgstr "Main page"
+
+#: .\templates\includes\header.html:45
+msgid "Rezervace ubytování"
+msgstr "Accommodation"
+
+#: .\templates\includes\header.html:47
+msgid "Kontakt"
+msgstr "Contact"
