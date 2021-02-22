@@ -58,3 +58,24 @@ body > .body__container {
     text-decoration: none;
     list-style: none;
 }
+.g-btn {
+    padding: 4px 6px;
+    background: var(--surface-primary);
+    color: var(--surface-secondary);
+    box-shadow: 1px 1px 4px lightgrey;
+    border-radius: 4px;
+}
+.g-btn:hover {
+    background: var(--surface-primary-darker);
+    cursor: pointer;
+}
+
+.g-form input[type=text], input[type=password] {
+    background: var(--surface-secondary);
+    color: var(--surface-primary);
+    border: 2px solid var(--surface-primary);
+    border-radius: 4px;
+    box-shadow: 1px 1px 4px lightgrey;
+    padding: 8px;
+
+}

@@ -2,35 +2,49 @@
 
 <header class="header__container">
 
-    {# TOP BAR #}
-    <div class="header__topbar">
-
-        {# LOGO #}
-        <a href="{% url 'main:home' %}">{% trans 'Vítejte na stránkách penzionu U Bílého koníka' %} </a>
-
-        {# FACEBOOK ICON #}
-        {% include 'includes/icon24_facebook_link.html' %}
-
-        {# INSTAGRAM ICON #}
-        {% include 'includes/icon24_instagram.link.html' %}
-
-        {# LANGUAGE SWITCHER #}
+    {# TOP BAR - CHANGES IF USER SIGNED: ADMIN MODE#}
+    {# LEFT INFO TEXT  #}
+    {% if user.is_authenticated %}
+        {# SIGNED #}
+        <div class="header__topbar" style="background: lawngreen">
         <div>
-            <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
-                <input name="next" type="hidden" value="{{ redirect_to }}">
-                <select class="header__select-field" name="language" onchange="this.form.submit()">
-                    {% get_current_language as LANGUAGE_CODE %}
-                    {% get_available_languages as LANGUAGES %}
-                    {% get_language_info_list for LANGUAGES as languages %}
-                    {% for language in languages %}
-                        <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
-                            {{ language.name_local }} ({{ language.code }})
-                        </option>
-                    {% endfor %}
-                </select>
-
-            </form>
+            <a class="g-btn" href={% url 'main:webmanage' %}>Nastavení</a>
+            <a class="g-btn" href={% url 'main:logout' %}>Odhlásit se</a>
+            <span>Administrativní režim.</span>
+            <span>Přihlášen jako: <span style="font-weight: bold">{{ request.user }}</span></span>
         </div>
+    {% else %}
+        {# NOT SIGNED #}
+        <div class="header__topbar">
+        <div>
+            <a href="{% url 'main:home' %}">{% trans 'Vítejte na stránkách penzionu U Bílého koníka' %}</a>
+        </div>
+
+    {% endif %}
+
+    {# FACEBOOK ICON #}
+    {% include 'includes/icon24_facebook_link.html' %}
+
+    {# INSTAGRAM ICON #}
+    {% include 'includes/icon24_instagram.link.html' %}
+
+    {# LANGUAGE SWITCHER #}
+    <div>
+        <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
+            <input name="next" type="hidden" value="{{ redirect_to }}">
+            <select class="header__select-field" name="language" onchange="this.form.submit()">
+                {% get_current_language as LANGUAGE_CODE %}
+                {% get_available_languages as LANGUAGES %}
+                {% get_language_info_list for LANGUAGES as languages %}
+                {% for language in languages %}
+                    <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
+                        {{ language.name_local }} ({{ language.code }})
+                    </option>
+                {% endfor %}
+            </select>
+
+        </form>
+    </div>
     </div>
 
     {# HEADER IMAGE #}
@@ -40,9 +54,11 @@
 
     {# NAVBAR #}
     <div class="header__menu">
-        <a href="{% url 'main:home' %}">{% trans 'Hlavní stránka' %}</a>
+        <a href="{% url 'main:home' %}">{% trans 'Úvod' %}</a>
         <span>|</span>
-        <a href="{% url 'main:home' %}">{% trans 'Rezervace ubytování' %}</a>
+        <a href="{% url 'main:accomodation' %}">{% trans 'Ubytování' %}</a>
+        <span>|</span>
+        <a href="{% url 'main:home' %}">{% trans 'Svatby' %}</a>
         <span>|</span>
         <a href="{% url 'main:home' %}">{% trans 'Kontakt' %}</a>
     </div>

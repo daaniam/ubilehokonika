@@ -12,7 +12,7 @@
     align-items: center;
     border-bottom: 1px solid var(--surface-primary);
 }
-.header__topbar a:first-child {
+.header__topbar div:first-child {
     color: var(--surface-primary);
     flex-grow: 1;
 }
@@ -45,7 +45,7 @@
     justify-content: flex-end;
     box-shadow: 0 4px 8px grey;
 }
-.header__menu > a, span {
+.header__menu > * {
     padding: 4px 8px;
     font-size: 1.2rem;
     font-weight: normal;
@@ -54,3 +54,4 @@
 .header__menu > a:hover {
     background-color: var(--surface-primary-darker)
 }
+

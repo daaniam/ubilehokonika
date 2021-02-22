@@ -1,0 +1,18 @@
+{% extends 'base/base.html' %}
+{% load i18n %}
+
+{% block content %}
+    <div class="login_container">
+        <form method="post" class="g-form login__form">
+            {% csrf_token %}
+            <label for="username">
+                <input type="text" name="username" placeholder="Uživatelské jméno...">
+            </label>
+            <label for="password">
+                <input type="password" name="password" placeholder="Heslo...">
+            </label>
+            <input type="submit" class="g-btn" value="Přihlásit se">
+        </form>
+    </div>
+
+{% endblock %}

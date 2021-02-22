@@ -1,0 +1,15 @@
+.login_container {
+    min-height: 400px;
+    display: flex;
+    justify-content: center;
+}
+
+.login__form {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+.login__form > * {
+    margin: 4px
+}

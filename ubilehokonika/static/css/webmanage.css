@@ -1,0 +1,7 @@
+.webmanage__add_news_form {
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 8px;
+}

@@ -1,19 +1,16 @@
 from django.db import models
 import uuid
-from datetime import datetime
 
-
-# Create your models here.
 
 class GlobalSettings(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4(), editable=False)
+    key = models.CharField(max_length=48, primary_key=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    num_of_announcements = models.IntegerField()
+    value = models.CharField(max_length=200, blank=False)
 
 
 class Announcement(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4(), editable=False)
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False, serialize=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     cs = models.CharField(max_length=400)
