@@ -1,6 +1,6 @@
 from django.forms import ModelForm
 from django import forms
-from .models import Announcement, GlobalSettings
+from .models import AnnouncementModel, GlobalSettingsModel
 
 
 # class AnnouncementsCountForm(forms.Form):
@@ -9,7 +9,7 @@ from .models import Announcement, GlobalSettings
 
 class AnnouncementsCountForm(ModelForm):
     class Meta:
-        model = GlobalSettings
+        model = GlobalSettingsModel
         fields = ['value']
         choices = [(str(x), x) for x in range(1, 9)]
         widgets = {
@@ -19,5 +19,5 @@ class AnnouncementsCountForm(ModelForm):
 
 class AnnouncementForm(ModelForm):
     class Meta:
-        model = Announcement
+        model = AnnouncementModel
         fields = ['cs', 'en', 'de']  # '__all__'
