@@ -24,3 +24,8 @@ class AnnouncementForm(ModelForm):
     class Meta:
         model = AnnouncementModel
         fields = ['cs', 'en', 'de']  # '__all__'
+        widgets = {
+            'cs': forms.Textarea(attrs={'rows': 4, 'cols': 40}),
+            'en': forms.Textarea(attrs={'rows': 4, 'cols': 40}),
+            'de': forms.Textarea(attrs={'rows': 4, 'cols': 40}),
+        }

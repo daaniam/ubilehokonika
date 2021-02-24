@@ -1,9 +1,10 @@
 .webmanage__container {
     margin-top: 4rem;
-    min-height: 600px;
     display: flex;
     flex-flow: column;
     align-items: center;
+    min-height: 600px;
+
 }
 
 .webmanage__container > * {
@@ -17,22 +18,23 @@
 
 /* ANNOUNCEMENTS SETTINGS SECTION */
 .webmanage__announcements {
-    border: 1px solid var(--surface-primary);
-    box-shadow: 1px 1px 2px grey;
-    padding: 4px;
+    box-shadow: 0 0 4px var(--surface-primary);
+    border-radius: 4px;
+    padding: 12px;
     display: flex;
     flex-flow: column;
+    min-width: 800px;
 }
 
 /* ANNOUNCEMENTS SETTINGS SECTION > top panel */
 .webmanage__announcements-top {
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
+    flex-flow: column;
+    margin: 1rem 0;
 }
 
 .webmanage__announcements-top > * {
-    margin: 12px 0 12px 12px;
+    margin: 6px 0
 }
 
 .webmanage__heading {

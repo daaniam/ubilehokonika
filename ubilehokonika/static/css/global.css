@@ -38,6 +38,7 @@ body > .body__container {
     margin: auto;
     background-color: var(--surface-secondary);
     box-shadow: 1px 1px 16px grey;
+
 }
 
 /*MIXIN*/
@@ -104,11 +105,11 @@ body > .body__container {
 }
 
 .g-table tr {
-    border: 1px solid grey;
+    border: 1px solid var(--surface-primary);
 }
 
 .g-table tr:hover {
-    background: rgba(172, 43, 49, 0.1);
+    background: var(--surface-secondary-darker);
     color: var(--surface-secondary);
 }
 

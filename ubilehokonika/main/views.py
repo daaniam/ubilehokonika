@@ -100,37 +100,37 @@ def announcement_set_count(request):
 
 @login_required()
 def announcement_create(request):
-    announcement_form = AnnouncementForm()
+    form = AnnouncementForm()
 
     if request.method == 'POST':
-        form_data = AnnouncementForm(request.POST)
-        if form_data.is_valid():
-            form_data.save()
+        form = AnnouncementForm(request.POST)
+        if form.is_valid():
+            form.save()
             return redirect('main:webmanage')
 
     return render(
         request,
-        'webmanage/announcement_create.html',
-        {'announcement_form': announcement_form}
+        'webmanage/announcement_form.html',
+        {'form': form}
     )
 
 
 @login_required()
-def announcement_update(request, pk=None):
+def announcement_update(request, pk):
     announcement = AnnouncementModel.objects.get(id=pk)
-    announcement_form = AnnouncementForm(instance=announcement)
+    form = AnnouncementForm(instance=announcement)
 
     if request.method == 'POST':
-        announcement_form = AnnouncementForm(request.POST, instance=announcement)
-        if announcement_form.is_valid():
-            announcement_form.save()
+        form = AnnouncementForm(request.POST, instance=announcement)
+        if form.is_valid():
+            form.save()
             return redirect('main:webmanage')
 
     return render(
         request,
-        'webmanage/announcement_update.html',
+        'webmanage/announcement_form.html',
         {
-            'announcement_form': announcement_form
+            'form': form
         }
 
     )
@@ -160,7 +160,8 @@ def home(request):
     # Query announcements as list of tuples (message, timestamp)
     announcements_query = AnnouncementModel.objects.values_list(current_lang_i18n, 'created_at').order_by('created_at')[
                           0:announcements_count]
-    announcements = [{"msg": x[0], "date": x[1].strftime('%d.%m.%Y')} for x in announcements_query]
+
+    announcements = [{"msg": x[0], "date": x[1].strftime('%d.%m.%Y')} for x in reversed(announcements_query)]
 
     return render(
         request=request,

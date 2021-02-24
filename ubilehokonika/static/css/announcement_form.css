@@ -1,0 +1,39 @@
+.ann_form__container {
+    margin-top: 3rem;
+}
+
+.ann_form__back-btn {
+    margin-left: 2rem;
+}
+
+.ann_form__form {
+    margin: 2rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ann_form__form form {
+    align-items: center;
+}
+.ann_form__form form > * {
+    margin: 8px
+}
+
+.ann_form__form textarea {
+    background: var(--surface-secondary);
+    border: 1px solid var(--surface-primary);
+    border-radius: 2px;
+    resize: none;
+    display: block;
+}
+.ann_form__form textarea:focus {
+    background: var(--surface-secondary-darker);
+    color: var(--surface-primary);
+}
+
+
+.ann_form__form div {
+    display: flex;
+    justify-content: flex-end;
+}

@@ -1,0 +1,25 @@
+{% extends 'base/base.html' %}
+{% load i18n %}
+
+{% block content %}
+    <div class="ann_form__container">
+
+        <div class="ann_form__back-btn">
+            <a class="g-btn" href={% url 'main:webmanage' %}>Zpět</a>
+        </div>
+
+        <div class="ann_form__form">
+            <form action="" name="announcement_form" method="post" class="g-form">
+                {% csrf_token %}
+                {{ form }}
+                <div>
+                    <input type="submit" name="Submit" value="Odeslat" class="g-btn">
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+
+
+{% endblock %}
