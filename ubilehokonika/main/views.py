@@ -46,7 +46,7 @@ def webmanage(request):
 
     return render(
         request,
-        'base/webmanage.html',
+        'webmanage/webmanage.html',
         {
             'announcements_count_form': announcements_count_form,
             'announcement_form': AnnouncementForm,
@@ -55,7 +55,7 @@ def webmanage(request):
     )
 
 
-# { Forms }
+# { Announcements }
 
 # -- Second solution to Select form menu --
 
@@ -81,7 +81,7 @@ def webmanage(request):
 def announcement_set_count(request):
     """
     Set how many announcement to display on Home page.
-    If there is not such setting stored in DB yet, the default value is 4.
+    If there is not such setting stored in DB yet, the default value is 1.
     """
     if request.method == 'POST':
         try:
@@ -90,6 +90,7 @@ def announcement_set_count(request):
             session = GlobalSettingsModel(key='announcements_count')
 
         form_data = AnnouncementsCountForm(request.POST, instance=session)
+
         if form_data.is_valid():
             form_data.save()
             return redirect('main:webmanage')
@@ -98,22 +99,24 @@ def announcement_set_count(request):
 
 
 @login_required()
-def announcement_add(request):
-    """
-    Create new announcement from the Webadmin page.
-    """
-    print(request)
+def announcement_create(request):
+    announcement_form = AnnouncementForm()
+
     if request.method == 'POST':
         form_data = AnnouncementForm(request.POST)
         if form_data.is_valid():
             form_data.save()
             return redirect('main:webmanage')
 
-    return redirect('main:home')  # TODO handle errors here - messages
+    return render(
+        request,
+        'webmanage/announcement_create.html',
+        {'announcement_form': announcement_form}
+    )
 
 
 @login_required()
-def announcement_update(request, pk):
+def announcement_update(request, pk=None):
     announcement = AnnouncementModel.objects.get(id=pk)
     announcement_form = AnnouncementForm(instance=announcement)
 
@@ -125,7 +128,7 @@ def announcement_update(request, pk):
 
     return render(
         request,
-        'forms/announcement_update.html',
+        'webmanage/announcement_update.html',
         {
             'announcement_form': announcement_form
         }
@@ -133,14 +136,19 @@ def announcement_update(request, pk):
     )
 
 
+@login_required()
 def announcement_delete(request, pk):
-    print('delete pk is', pk)
-    pass
+    if request.method == 'POST':
+        announcement = AnnouncementModel.objects.get(id=pk)
+        announcement.delete()
+
+    return redirect('main:webmanage')
 
 
 # { Pages }
 def home(request):
-    # Read how many announcements to display from DB
+    # Read how many announcements to display from DB.
+    # If there is not such setting stored in DB yet, the default value is 1.
     try:
         announcements_count = int(GlobalSettingsModel.objects.get(key='announcements_count').value)
     except GlobalSettingsModel.DoesNotExist:

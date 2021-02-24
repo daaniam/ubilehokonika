@@ -1,0 +1,70 @@
+{% extends 'base/base.html' %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+{% get_available_languages as LANGUAGES %}
+
+
+
+{% block content %}
+    <div class="webmanage__container">
+
+        <p class="webmanage__heading">{% trans 'Administrace stránky' %}</p>
+
+
+        {# ANNOUNCEMENTS SETTINGS #}
+        <div>
+            <h2>{% trans 'Oznámení' %}</h2>
+            <div class="webmanage__announcements">
+
+                {# ANNOUNCEMENT SECTION TOP PANEL SETTINGS #}
+                <div class="webmanage__announcements-top">
+                    {# SET NUMBER OF ANNOUNCEMENTS #}
+                    <form action="{% url 'main:announcement_set_count' %}" name="announcement_set_count" method="post"
+                          class="g-form">
+                        {% csrf_token %}
+                        {{ announcements_count_form }}
+                        {#  <input type="submit" name="Submit" value="Nastavit" class="g-btn">#}
+                    </form>
+
+                    {# ADD NEW ANNOUNCEMENT #}
+                    <div>
+                        <a href="{% url 'main:announcement_create' %}" class="g-btn">
+                            {% trans 'Přidat oznámení' %}
+                        </a>
+                    </div>
+                </div>
+
+                {# ANNOUNCEMENTS TABLE #}
+                <table class="g-table">
+                    <tr>
+                        <th>{% trans 'Upraveno' %}</th>
+                        <th>{% trans 'Oznámení' %}</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+
+                    {% for announcement in announcements %}
+                        <tr>
+                            <td>{{ announcement.updated_at }}</td>
+                            {# TODO Language locale supported output #}
+                            <td>{{ announcement.cs|truncatechars:50 }}</td>
+                            <td>
+                                <a href="{% url 'main:announcement_update' announcement.id %}" class="g-btn">Edit</a>
+                            </td>
+                            <td>
+                                <form action="{% url 'main:announcement_delete' announcement.id %}" method="POST">
+                                    {% csrf_token %}
+                                    <input type="submit" name="submit" class="g-btn clear" value="Smazat">
+                                </form>
+                            </td>
+                        </tr>
+                    {% empty %}
+                        <td>{% trans 'Nebyla vytvořena žádná oznámení' %}</td>
+                    {% endfor %}
+                </table>
+            </div>
+
+        </div>
+
+    </div>
+{% endblock %}

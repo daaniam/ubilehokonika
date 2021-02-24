@@ -19,18 +19,16 @@ from . import views
 
 app_name = 'main'
 
-forms_urls = [
-    path('add_announcement_form', views.announcement_add, name="add_announcement_form"),
-    path('set_announcement_count_form', views.announcement_set_count, name="set_announcement_count_form")
-]
-
 urlpatterns = [
-                  path('', views.home, name="home"),
-                  path('login', views.auth_login, name="login"),
-                  path('logout', views.auth_logout, name="logout"),
-                  path('accomodation', views.accomodation, name="accomodation"),
-                  path('webmanage', views.webmanage, name="webmanage"),
+    path('', views.home, name="home"),
+    path('login', views.auth_login, name="login"),
+    path('logout', views.auth_logout, name="logout"),
+    path('accomodation', views.accomodation, name="accomodation"),
+    path('webmanage', views.webmanage, name="webmanage"),
 
-                  path('announcement_update/<str:pk>', views.announcement_update, name="announcement_update"),
-                  path('announcement_delete/<str:pk>', views.announcement_delete, name="announcement_delete")
-              ] + forms_urls
+    # ANNOUNCEMENTS
+    path('announcement_set_count', views.announcement_set_count, name="announcement_set_count"),
+    path('announcement_create', views.announcement_create, name="announcement_create"),
+    path('announcement_update/<str:pk>', views.announcement_update, name="announcement_update"),
+    path('announcement_delete/<str:pk>', views.announcement_delete, name="announcement_delete")
+]

@@ -5,6 +5,7 @@
     src: local('WorkSans'),
     url('../fonts/WorkSans-VariableFont_wght.ttf') format("truetype");
 }
+
 @font-face {
     font-family: 'WorkSansItalic';
     src: local('WorkSansItalic'),
@@ -31,6 +32,7 @@ body {
     background-color: var(--bg-primary);
 
 }
+
 body > .body__container {
     max-width: 1000px;
     margin: auto;
@@ -45,26 +47,35 @@ body > .body__container {
     justify-content: center;
     align-items: center;
 }
+
 .g-flex-col {
     display: flex;
     flex-flow: column;
     justify-content: center;
     align-items: center;
 }
+
 .g-shadow-8 {
     box-shadow: 0 0 8px grey;
 }
+
 .g-list-clean {
     text-decoration: none;
     list-style: none;
 }
+
 .g-btn {
+    -webkit-appearance: none;
+    outline: none;
+    border: none;
+    margin: 0;
     padding: 4px 6px;
     background: var(--surface-primary);
     color: var(--surface-secondary);
     box-shadow: 1px 1px 4px lightgrey;
     border-radius: 4px;
 }
+
 .g-btn:hover {
     background: var(--surface-primary-darker);
     cursor: pointer;
@@ -79,3 +90,30 @@ body > .body__container {
     padding: 8px;
 
 }
+
+.g-table {
+    margin: 0;
+    padding: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.g-table th {
+    background: var(--surface-primary);
+    color: var(--surface-secondary);
+}
+
+.g-table tr {
+    border: 1px solid grey;
+}
+
+.g-table tr:hover {
+    background: rgba(172, 43, 49, 0.1);
+    color: var(--surface-secondary);
+}
+
+.g-table td {
+    margin: 1px;
+    padding: 6px;
+}
+

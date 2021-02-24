@@ -1,3 +1,44 @@
+.webmanage__container {
+    margin-top: 4rem;
+    min-height: 600px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.webmanage__container > * {
+    margin: 12px;
+}
+
+.webmanage__container h2 {
+    font-size: 1.4rem;
+    padding: 4px;
+}
+
+/* ANNOUNCEMENTS SETTINGS SECTION */
+.webmanage__announcements {
+    border: 1px solid var(--surface-primary);
+    box-shadow: 1px 1px 2px grey;
+    padding: 4px;
+    display: flex;
+    flex-flow: column;
+}
+
+/* ANNOUNCEMENTS SETTINGS SECTION > top panel */
+.webmanage__announcements-top {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.webmanage__announcements-top > * {
+    margin: 12px 0 12px 12px;
+}
+
+.webmanage__heading {
+    font-size: 2rem;
+}
+
 .webmanage__add_news_form {
     display: flex;
     flex-flow: column;

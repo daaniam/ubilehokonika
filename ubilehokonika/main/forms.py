@@ -15,6 +15,9 @@ class AnnouncementsCountForm(ModelForm):
         widgets = {
             'value': forms.Select(choices=choices, attrs={'onchange': 'submit()'})
         }
+        labels = {
+            'value': 'Number of announcements'
+        }
 
 
 class AnnouncementForm(ModelForm):
