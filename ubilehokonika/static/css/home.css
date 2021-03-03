@@ -67,6 +67,27 @@
     color: var(--surface-primary)
 }
 
+/* OFFERINGS */
+.home__offerings_block {
+    background: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.home__offerings_block > * {
+    margin: 8px;
+}
+.home__offer {
+    background: coral;
+    width: 160px;
+    height: 160px;
+    padding: 4px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
 /* HISTORY BLOCK */
 .home__history_block {
     border-top: 2px solid var(--surface-secondary);
